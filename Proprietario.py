@@ -20,7 +20,7 @@ class Proprietario:
 
     # 2.a
     def listarImoveis(self, tipo):
-        print("\n Imoveis de " + self.getNome() + "\n")
+        print("\n=== Imoveis de " + self.getNome() + "do tipo " + tipo + " ===\n")
         for imovel in self._imoveis:
             if imovel.getTipo() == tipo.lower():
                 print("  - ", end="")
