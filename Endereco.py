@@ -1,41 +1,41 @@
 class Endereco:
     def __init__(self, rua, numero, cidade, estado, cep):
-        self.rua = rua
-        self.numero = numero
-        self.cidade = cidade
-        self.estado = estado
-        self.cep = cep
+        self._rua = rua
+        self._numero = numero
+        self._cidade = cidade
+        self._estado = estado
+        self._cep = cep
 
     def getRua(self):
-        return self.rua
+        return self._rua
 
     def getNumero(self):
-        return self.numero
+        return self._numero
     
     def getCidade(self):
-        return self.cidade
+        return self._cidade
     
     def getEstado(self):
-        return self.estado
+        return self._estado
     
     def getCep(self):
-        return self.cep
+        return self._cep
     
     def setRua(self, rua):
-        self.rua = rua
+        self._rua = rua
 
     def setNumero(self, numero):
-        self.numero = numero
+        self._numero = numero
 
     def setCidade(self, cidade):
-        self.cidade = cidade
+        self._cidade = cidade
 
     def setEstado(self, estado):
-        self.estado = estado
+        self._estado = estado
 
     def setCep(self, cep):
-        self.cep = cep
+        self._cep = cep
 
     def __str__(self):
-        return f"{self.rua}, {self.numero}, {self.cidade}, {self.estado}, {self.cep}"
+        return f"{self._rua}, {self._numero}, {self._cidade}, {self._estado}, {self._cep}"
     

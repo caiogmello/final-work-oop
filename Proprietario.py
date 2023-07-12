@@ -4,6 +4,25 @@ class Proprietario:
         self._nome = nome
         self._cpf = cpf
         self._endereco = Endereco(rua, numero, cidade, estado, cep)
+        self._imoveis = []
+
+    def adicionarImovel(self, imovel):
+        self._imoveis.append(imovel)
+
+    def listarImoveis(self, tipo):
+        for imovel in self._imoveis:
+            if imovel.getTipo() == tipo:
+                print(imovel)
+        
+    def atualizarEndereco(self, rua, numero, cep, estado, cidade):
+        self._endereco.setRua(rua)
+        self._endereco.setNumero(numero)
+        self._endereco.setCep(cep)
+        if estado != "":
+            self._endereco.setEstado(estado)
+        if cidade != "":
+            self._endereco.setCidade(cidade)
+
 
     def getNome(self):
         return self.nome
@@ -19,19 +38,7 @@ class Proprietario:
 
     def setCpf(self, cpf):
         self.cpf = cpf
-
-    def atualizarEndereco(self, rua, numero, cep, estado, cidade):
-        self.endereco.setRua(rua)
-        self.endereco.setNumero(numero)
-        self.endereco.setCep(cep)
-        if estado != None:
-            self.endereco.setEstado(estado)
-        if cidade != None:
-            self.endereco.setCidade(cidade)
-
-
         
-
     def __str__(self):
         return f"{self._nome}, {self._cpf}, {self._endereco}"
     
