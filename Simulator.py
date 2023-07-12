@@ -6,12 +6,13 @@ class Simulator:
     def __init__(self):
         self._proprietarios = []
 
+    # 3.a
     def cadastrarProprietario(self):
         nome = input("Digite o nome do proprietario: ")
         cpf = input("Digite o cpf do proprietario: ")
-        # if self.buscaProprietario(cpf) != None:
-        #     print("Proprietario ja cadastrado \n")
-        #     return False
+        if self.buscaProprietario(cpf) != None:
+            print("Proprietario ja cadastrado \n")
+            return False
         identidade = input("Digite a identidade do proprietario: ")
         rua = input("Digite a rua do proprietario: ")
         numero = input("Digite o numero do proprietario: ")
@@ -20,9 +21,7 @@ class Simulator:
         cep = input("Digite o cep do proprietario: ")
         print("Proprietario cadastrado com sucesso \n")
         proprietario = Proprietario(nome, cpf, identidade, rua, numero, cidade, estado, cep)
-        # print(len(self._proprietarios))
         self._proprietarios.append(proprietario)
-        # print(len(self._proprietarios))
         return True
     
                 
@@ -33,6 +32,7 @@ class Simulator:
             print("  - " + proprietario.getNome())
         print("\n")
     
+    # 3.a
     def cadastrarImovel(self):
         iptu = input("Digite o iptu do imovel: ")
         rua = input("Digite a rua do imovel: ")
@@ -67,6 +67,8 @@ class Simulator:
         else:
             tipo = input("Digite o tipo do imovel (CASA/APTO): ")
             proprietario.listarImoveis(tipo)
+
+    # 3.a
     def bloquearImovel(self):
         proprietario = self.buscaProprietario(input("Digite o cpf do proprietario: "))
         if proprietario == None:
@@ -94,6 +96,7 @@ class Simulator:
                 print("\n Imovel bloqueado com sucesso. \n")
                 return True
     
+    # 3.a
     def alugarImovel(self):
         proprietario = self.buscaProprietario(input("Digite o cpf do proprietario: "))
         if proprietario == None:

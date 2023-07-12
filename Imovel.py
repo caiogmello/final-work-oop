@@ -2,9 +2,14 @@ from Endereco import Endereco
 from Agenda import Agenda
 # 1
 class Imovel:
-    # 1.a / 1.b
-    def __init__(self, iptu, rua, numero, cep, tipo, utilizacao, estado="Bahia", cidade="Salvador"):
+    # 1.a 
+    def __init__(self, iptu, rua, numero, cep, tipo, utilizacao, estado, cidade):
         self.iptu = iptu
+        # 1.c 
+        # Criei uma verificação, pois não existe overloading em python
+        if estado == "" or cidade == "":
+            estado = "Bahia"
+            cidade = "Salvador"
         self.endereco = Endereco(rua, numero, cidade, estado, cep)
         self.tipo = tipo.lower()
         self.utilizacao = utilizacao

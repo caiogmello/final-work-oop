@@ -11,6 +11,7 @@ class Proprietario:
         self._imoveis = []
 
     def adicionarImovel(self, imovel):
+        # 2
         if imovel.getEndereco() == self._endereco:
             print("Esse imóvel é do próprio proprietário. \n")
             return False

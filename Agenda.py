@@ -1,10 +1,11 @@
 from datetime import datetime, timedelta
-
+# 3
 class Agenda:
     def __init__(self):
         self._diasAlugados = []
         self._diasBloqueados = []
-    
+
+    # coloco todas as datas alugadas em uma lista de datas alugadas
     def alugarImovel(self, diaInicial, mesInicial, AnoInicial
                      , diaFinal, mesFinal, anoFinal):
         timeDelta = timedelta(days=1)
@@ -13,7 +14,8 @@ class Agenda:
         while dataInicial <= dataFinal:
             self._diasAlugados.append(dataInicial)
             dataInicial += timeDelta
-        
+
+    # coloco todas as datas bloqueadas em uma lista de datas bloqueadas
     def bloquearImovel(self, diaInicial, mesInicial, AnoInicial
                      , diaFinal, mesFinal, anoFinal):
         timeDelta = timedelta(days=1)

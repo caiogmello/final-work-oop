@@ -32,7 +32,8 @@ def run():
             print("\nSaindo do sistema...\n")
             break
 
-run()
+if __name__ == "__main__":
+    run()
 
 
 
