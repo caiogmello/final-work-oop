@@ -1,5 +1,7 @@
 from Endereco import Endereco
+# 1
 class Proprietario:
+    # 1.b
     def __init__(self, nome, cpf, rua, numero, cidade, estado, cep):
         self._nome = nome
         self._cpf = cpf
@@ -8,12 +10,14 @@ class Proprietario:
 
     def adicionarImovel(self, imovel):
         self._imoveis.append(imovel)
-
+        
+    # 2.a
     def listarImoveis(self, tipo):
         for imovel in self._imoveis:
             if imovel.getTipo() == tipo:
                 print(imovel)
-        
+    # 1.d
+    # Criei apenas um método pois não existe o conceito de overload em Python
     def atualizarEndereco(self, rua, numero, cep, estado, cidade):
         self._endereco.setRua(rua)
         self._endereco.setNumero(numero)

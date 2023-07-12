@@ -1,3 +1,4 @@
+# 2.
 class Endereco:
     def __init__(self, rua, numero, cidade, estado, cep):
         self._rua = rua

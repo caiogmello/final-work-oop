@@ -1,5 +1,7 @@
 from Endereco import Endereco
+# 1
 class Imovel:
+    # 1.a / 1.b
     def __init__(self, iptu, rua, numero, cep, tipo, utilizacao, estado="Bahia", cidade="Salvador"):
         self.iptu = iptu
         self.endereco = Endereco(rua, numero, cidade, estado, cep)
