@@ -6,31 +6,19 @@ class Agenda:
         self._diasBloqueados = []
     
     def alugarImovel(self, diaInicial, mesInicial, AnoInicial
-                     , diaFinal="", mesFinal="", anoFinal=""):
+                     , diaFinal, mesFinal, anoFinal):
         timeDelta = timedelta(days=1)
-        dataInicial = datetime(AnoInicial, mesInicial, diaInicial)
-        if diaFinal == "":
-            diaFinal = diaInicial
-        if mesFinal == "":
-            mesFinal = mesInicial
-        if anoFinal == "":
-            anoFinal = AnoInicial
-        dataFinal = datetime(anoFinal, mesFinal, diaFinal)
+        dataInicial = datetime(int(AnoInicial), int(mesInicial), int(diaInicial))
+        dataFinal = datetime(int(anoFinal), int(mesFinal), int(diaFinal))
         while dataInicial <= dataFinal:
             self._diasAlugados.append(dataInicial)
             dataInicial += timeDelta
         
     def bloquearImovel(self, diaInicial, mesInicial, AnoInicial
-                     , diaFinal="", mesFinal="", anoFinal=""):
+                     , diaFinal, mesFinal, anoFinal):
         timeDelta = timedelta(days=1)
-        dataInicial = datetime(AnoInicial, mesInicial, diaInicial)
-        if diaFinal == "":
-            diaFinal = diaInicial
-        if mesFinal == "":
-            mesFinal = mesInicial
-        if anoFinal == "":
-            anoFinal = AnoInicial
-        dataFinal = datetime(anoFinal, mesFinal, diaFinal)
+        dataInicial = datetime(int(AnoInicial), int(mesInicial), int(diaInicial))
+        dataFinal = datetime(int(anoFinal), int(mesFinal), int(diaFinal))
         while dataInicial <= dataFinal:
             self._diasBloqueados.append(dataInicial)
             dataInicial += timeDelta
@@ -43,5 +31,4 @@ class Agenda:
         
         def __str__(self):
             return f"{self._diasAlugados}, {self._diasBloqueados}"
-        
         
